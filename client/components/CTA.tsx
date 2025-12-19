@@ -1,0 +1,49 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+export default function CTA() {
+  return (
+    <section id="cta" className="py-20 px-4 bg-gradient-to-r from-primary/12 via-background to-background">
+      <div className="container mx-auto max-w-4xl text-center">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground">
+          📞 Ready to Automate Your Business?
+        </h2>
+        <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Let us show you the workflows that will save you the most time and money.
+          Book a free consultation with our automation experts.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold h-12 px-8 text-base"
+            onClick={() => (window.location.href = "mailto:hello@resolvix.com")}
+          >
+            Book a Free Automation Audit
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-primary/30 hover:bg-primary/5 text-primary rounded-lg font-semibold h-12 px-8 text-base"
+            onClick={() => (window.location.href = "mailto:hello@resolvix.com?subject=Custom%20Workflow%20Quote")}
+          >
+            Get a Custom Workflow Quote
+          </Button>
+        </div>
+
+        <div className="mt-16 pt-16 border-t border-border">
+          <p className="text-sm text-muted-foreground mb-4">
+            Available 24/7 via email or scheduled call
+          </p>
+          <a
+            href="mailto:hello@resolvix.com"
+            className="text-primary hover:text-primary/80 font-semibold transition-colors"
+          >
+            hello@resolvix.com
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
