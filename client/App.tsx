@@ -9,6 +9,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+// import FutureOSAccess from "../src/pages/FutureOSAccess";
+// import FutureOSApply from "./pages/FutureOSApply";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +49,8 @@ export default function App() {
                 </Layout>
               }
             />
+            {/* <Route path="/futureos-access" element={<FutureOSAccess />} />
+        <Route path="/futureos-access/apply" element={<FutureOSApply />} /> */}
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

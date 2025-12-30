@@ -136,7 +136,7 @@ export default function Services() {
           <p className="text-xl text-muted-foreground mb-6">
             AI Automations That Increase Revenue & Reduce Workload
           </p>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Resolvix is your end-to-end automation partner. We plug directly into
             your existing tools — Gmail, WhatsApp, Google Sheets, Shopify, HubSpot,
             Zoho, ERPs, CRMs — and build AI systems that work for you 24/7.

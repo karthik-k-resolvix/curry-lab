@@ -91,7 +91,7 @@ export default function FAQ() {
             href="mailto:hello@resolvix.com"
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
           >
-            Contact us at hello@resolvix.com →
+            Contact us at info@resolvix.tech →
           </a>
         </div>
       </div>

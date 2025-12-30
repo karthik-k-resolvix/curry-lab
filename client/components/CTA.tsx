@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function CTA() {
+  const navigate = useNavigate();
   return (
     <section id="cta" className="py-20 px-4 bg-gradient-to-r from-primary/12 via-background to-background">
       <div className="container mx-auto max-w-4xl text-center">
@@ -26,13 +28,13 @@ export default function CTA() {
             size="lg"
             variant="outline"
             className="border-primary/30 hover:bg-primary/5 text-primary rounded-lg font-semibold h-12 px-8 text-base"
-            onClick={() => (window.location.href = "mailto:hello@resolvix.com?subject=Custom%20Workflow%20Quote")}
+           onClick={() => navigate("/futureos-access")}
           >
-            Get a Custom Workflow Quote
+           Try Free Audit Today!
           </Button>
         </div>
 
-        <div className="mt-16 pt-16 border-t border-border">
+        <div className="mt-10 pt-4 border-t border-border">
           <p className="text-sm text-muted-foreground mb-4">
             Available 24/7 via email or scheduled call
           </p>
@@ -40,7 +42,7 @@ export default function CTA() {
             href="mailto:hello@resolvix.com"
             className="text-primary hover:text-primary/80 font-semibold transition-colors"
           >
-            hello@resolvix.com
+            info@resolvix.tech
           </a>
         </div>
       </div>

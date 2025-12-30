@@ -18,9 +18,16 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">R</span>
-          </div>
+          <Link to="/" className="flex items-center gap-2 shrink-0">
+          <img
+            src="/assets/Logo.png"
+            width={36}
+            height={36}
+            alt="Resolvix logo"
+            className="block"
+          />
+        </Link>
+
           <span className="font-heading font-bold text-xl text-foreground hidden sm:block">
             Resolvix
           </span>

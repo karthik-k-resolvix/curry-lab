@@ -7,9 +7,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-foreground font-bold text-lg">R</span>
-              </div>
+               <Link to="/" className="flex items-center gap-2 shrink-0">
+          <img
+            src="/assets/Logo.png"
+            width={36}
+            height={36}
+            alt="Resolvix logo"
+            className="block"
+          />
+        </Link>
               <span className="font-heading font-bold text-xl">Resolvix</span>
             </div>
             <p className="text-background/70 text-sm">
@@ -92,10 +98,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Integrations</h4>
             <ul className="space-y-2 text-sm text-background/70">
-              <li>Gmail</li>
-              <li>WhatsApp</li>
-              <li>Shopify</li>
-              <li>HubSpot</li>
+              <li>Email</li>
+              <li>Zendesk</li>
               <li>And more...</li>
             </ul>
           </div>
