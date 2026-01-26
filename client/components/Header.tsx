@@ -1,16 +1,55 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [calendlyReady, setCalendlyReady] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.onload = () => setCalendlyReady(true);
+    document.body.appendChild(script);
+    return () => { 
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+  const handleCalendly = () => {
+    console.log('I am here5');
+    window.location.href = 'https://calendly.com/karthik-k-resolvix/30min?redirect_url=http://localhost:8080/';
+    // logEvent('booking calendly demo', { }, 'info', 'demo');
+  };
+
+  // Added: supports safe navigation to sections when not on homepage
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
+
+    // If element exists on current page, scroll as before (existing functionality preserved)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
+      return;
     }
+
+    // Added: if not on homepage (or element not present), navigate home then scroll
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      // Wait a tick for home to render, then try to scroll
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+    }
+
     setIsOpen(false);
   };
 
@@ -19,14 +58,14 @@ export default function Header() {
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img
-            src="/assets/Logo.png"
-            width={36}
-            height={36}
-            alt="Resolvix logo"
-            className="block"
-          />
-        </Link>
+            <img
+              src="/assets/Logo.png"
+              width={36}
+              height={36}
+              alt="Resolvix logo"
+              className="block"
+            />
+          </Link>
 
           <span className="font-heading font-bold text-xl text-foreground hidden sm:block">
             Resolvix
@@ -41,12 +80,19 @@ export default function Header() {
           >
             Services
           </button>
-          <button
-            onClick={() => scrollToSection("pricing")}
+
+          {/* Added: Case Studies / Resources route */}
+          <span className="relative">
+          <Link
+            to="/resources"
             className="text-foreground hover:text-primary transition-colors"
           >
-            Pricing
-          </button>
+            Case Studies
+          </Link>
+           <span className="absolute -top-2 -right-4 text-[8px] bg-primary text-primary-foreground px-1.5 py-0.5 rounded-full">
+    New
+  </span>
+  </span>
           <button
             onClick={() => scrollToSection("faq")}
             className="text-foreground hover:text-primary transition-colors"
@@ -65,7 +111,7 @@ export default function Header() {
             See Demo
           </Button>
           <Button
-            onClick={() => scrollToSection("cta")}
+            onClick={handleCalendly}
             className="bg-primary hover:bg-primary/90"
           >
             Book Audit
@@ -91,6 +137,16 @@ export default function Header() {
             >
               Services
             </button>
+
+            {/* Added: Case Studies / Resources route */}
+            <Link
+              to="/resources"
+              onClick={() => setIsOpen(false)}
+              className="text-left text-foreground hover:text-primary transition-colors py-2"
+            >
+              Case Studies
+            </Link>
+
             <button
               onClick={() => scrollToSection("pricing")}
               className="text-left text-foreground hover:text-primary transition-colors py-2"
@@ -112,7 +168,7 @@ export default function Header() {
                 See Demo
               </Button>
               <Button
-                onClick={() => scrollToSection("cta")}
+                onClick={handleCalendly}
                 className="w-full bg-primary"
               >
                 Book Audit

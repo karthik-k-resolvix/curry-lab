@@ -1,10 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, PlayCircle } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
+  const [calendlyReady, setCalendlyReady] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.onload = () => setCalendlyReady(true);
+    document.body.appendChild(script);
+    return () => { 
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleCalendly = () => {
+    console.log('I am here5');
+    window.location.href = 'https://calendly.com/karthik-k-resolvix/30min?redirect_url=http://localhost:8080/';
+    // logEvent('booking calendly demo', { }, 'info', 'demo');
   };
 
   return (
@@ -71,7 +93,7 @@ export default function Hero() {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold h-12 px-8 text-base"
-              onClick={() => scrollToSection("cta")}
+              onClick={handleCalendly}
             >
               Book a Free Automation Audit
               <ArrowRight className="ml-2 h-5 w-5" />

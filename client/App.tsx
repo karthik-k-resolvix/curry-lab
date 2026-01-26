@@ -9,7 +9,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-// import FutureOSAccess from "../src/pages/FutureOSAccess";
+import Resources from "../src/pages/Resources";
+import EcommerceAIAutomation from "../src/pages/EcommerceAIAutomation";
+import InsuranceAIAutomation from "../src/pages/InsuranceAIAutomation";
+import FashionAIAutomation from "../src/pages/FashionAIAutomation";
+import AIAuditForm from "./pages/AIAuditForm";
 // import FutureOSApply from "./pages/FutureOSApply";
 
 const queryClient = new QueryClient();
@@ -41,6 +45,46 @@ export default function App() {
               }
             />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route
+              path="/resources"
+              element={
+                <Layout>
+                  <Resources />
+                </Layout>
+              }
+            />
+            <Route
+              path="/resources/ecommerce-ai-automation"
+              element={
+                <Layout>
+                  <EcommerceAIAutomation />
+                </Layout>
+              }
+            />
+            <Route
+              path="/resources/insurance-ai-automation"
+              element={
+                <Layout>
+                  <InsuranceAIAutomation />
+                </Layout>
+              }
+            />
+            <Route
+              path="/resources/fashion-ai-automation"
+              element={
+                <Layout>
+                  <FashionAIAutomation />
+                </Layout>
+              }
+            />
+            <Route
+              path="/ai-audit"
+              element={
+                <Layout>
+                  <AIAuditForm />
+                </Layout>
+              }
+            />
             <Route
               path="*"
               element={

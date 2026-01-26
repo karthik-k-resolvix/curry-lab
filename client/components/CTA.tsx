@@ -1,9 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function CTA() {
   const navigate = useNavigate();
+  const [calendlyReady, setCalendlyReady] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.onload = () => setCalendlyReady(true);
+    document.body.appendChild(script);
+    return () => { 
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+  const handleCalendly = () => {
+    console.log('I am here5');
+    window.location.href = 'https://calendly.com/karthik-k-resolvix/30min?redirect_url=http://localhost:8080/';
+    // logEvent('booking calendly demo', { }, 'info', 'demo');
+  };
   return (
     <section id="cta" className="py-20 px-4 bg-gradient-to-r from-primary/12 via-background to-background">
       <div className="container mx-auto max-w-4xl text-center">
@@ -19,7 +40,7 @@ export default function CTA() {
           <Button
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold h-12 px-8 text-base"
-            onClick={() => (window.location.href = "mailto:hello@resolvix.com")}
+            onClick={handleCalendly}
           >
             Book a Free Automation Audit
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -28,7 +49,7 @@ export default function CTA() {
             size="lg"
             variant="outline"
             className="border-primary/30 hover:bg-primary/5 text-primary rounded-lg font-semibold h-12 px-8 text-base"
-           onClick={() => navigate("/futureos-access")}
+           onClick={handleCalendly}
           >
            Try Free Audit Today!
           </Button>

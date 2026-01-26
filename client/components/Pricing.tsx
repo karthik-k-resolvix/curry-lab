@@ -61,59 +61,14 @@ export default function Pricing() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Transparent pricing for every stage of your automation journey
           </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {pricingPlans.map((plan, index) => (
-            <Card
-              key={index}
-              className={`relative overflow-hidden transition-all duration-300 ${
-                plan.highlight
-                  ? "border-primary border-2 shadow-lg md:scale-105 bg-gradient-to-br from-background to-primary/5"
-                  : "border border-border hover:border-primary/30"
-              }`}
-            >
-              {plan.highlight && (
-                <div className="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-xs font-bold rounded-bl-lg">
-                  POPULAR
-                </div>
-              )}
-              <div className="p-8">
-                <h3 className="text-2xl font-heading font-bold mb-2 text-foreground">
-                  {plan.title}
-                </h3>
-                <p className="text-primary font-bold text-3xl mb-2">
-                  {plan.price}
-                </p>
-                <p className="text-muted-foreground text-sm mb-6">
-                  {plan.description}
-                </p>
-
-                <div className="space-y-4 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-primary" />
-                      </div>
-                      <span className="text-foreground text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <Button
-                  onClick={() => scrollToSection("cta")}
-                  className={
-                    plan.highlight
-                      ? "w-full bg-primary hover:bg-primary/90 text-white"
-                      : "w-full border-primary text-primary hover:bg-primary/5"
-                  }
-                  variant={plan.highlight ? "default" : "outline"}
-                >
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Help us understand your requirements today to get the quotation!
+            <br/>
+          </p>
+           <Button onClick={() => scrollToSection("cta")}>
                   Get Started
                 </Button>
-              </div>
-            </Card>
-          ))}
         </div>
 
         <div className="bg-background border border-border rounded-lg p-8 text-center">

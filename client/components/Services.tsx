@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Sparkles } from "lucide-react";
 import {
   BarChart3,
   Eye,
@@ -136,16 +137,50 @@ export default function Services() {
           <p className="text-xl text-muted-foreground mb-6">
             AI Automations That Increase Revenue & Reduce Workload
           </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Resolvix is your end-to-end automation partner. We plug directly into
-            your existing tools — Gmail, WhatsApp, Google Sheets, Shopify, HubSpot,
-            Zoho, ERPs, CRMs — and build AI systems that work for you 24/7.
-          </p>
         </div>
 
-        <h3 className="text-2xl md:text-3xl font-heading font-bold mb-12 text-foreground">
-          🚀 Our Core Automation Services
+        {/* FutureOS Platform Introduction */}
+        <div className="mb-16 max-w-4xl mx-auto">
+          <Card className="bg-gradient-to-br from-primary/5 via-background to-primary/5 border-primary/20 p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-6">
+              <div className="w-16 h-16 bg-primary/15 rounded-xl flex items-center justify-center border border-primary/25 flex-shrink-0">
+                <Sparkles className="h-8 w-8 text-primary" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                    Platform
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+                    FutureOS
+                  </h3>
+                </div>
+                <p className="text-lg text-muted-foreground mb-4">
+                  The AI operations platform that orchestrates workflows across your existing tools, 
+                  with guardrails, audit trails, and real-time insights.
+                </p>
+                <p className="text-base text-muted-foreground">
+                  Get customizable AI automation services tailored to your business needs. 
+                  Mix and match services, integrate with your existing tools, and scale as you grow.
+                </p>
+              </div>
+            </div>
+            <div className="pt-6 border-t border-border/50">
+              <p className="text-sm text-muted-foreground mb-4">
+                <span className="text-foreground font-semibold">Works with:</span> Gmail, WhatsApp, 
+                Google Sheets, Shopify, HubSpot, Zoho, ERPs, CRMs, and more.
+              </p>
+            </div>
+          </Card>
+        </div>
+
+        <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-foreground text-center">
+          Customizable Services Available on FutureOS
         </h3>
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Choose the services that fit your business. Each service can be customized and integrated 
+          seamlessly with your existing workflows and tools.
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => {
