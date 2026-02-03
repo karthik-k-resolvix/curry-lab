@@ -135,3 +135,38 @@
     white-space: pre;
   }
 }
+
+@layer components {
+  /* Reusable section and CTA helpers for consistent alignment and spacing */
+  .section {
+    @apply container mx-auto px-4 mb-16 pt-12;
+  }
+
+  .section-center {
+    @apply max-w-3xl mx-auto text-center;
+  }
+
+  .section-wide {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .cta-strip {
+    @apply bg-muted rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6;
+  }
+
+  .section-hero {
+    @apply pt-12 pb-12 px-4 bg-gradient-to-br from-background via-background to-primary/10;
+  }
+
+  .section-cta {
+    @apply py-20 px-4 bg-gradient-to-r from-primary/12 via-background to-background;
+  }
+
+  .card-panel {
+    @apply mx-auto max-w-4xl rounded-2xl border border-primary/25 bg-background/40 backdrop-blur px-4 py-4 sm:px-6 sm:py-5 shadow-[0_0_0_1px_rgba(255,255,255,0.03)];
+  }
+
+  .cta-buttons {
+    @apply flex flex-col sm:flex-row gap-4 justify-center mb-16;
+  }
+}

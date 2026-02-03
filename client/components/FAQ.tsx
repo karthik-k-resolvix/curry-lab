@@ -38,8 +38,8 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-20 px-4 bg-background">
-      <div className="container mx-auto max-w-3xl">
+    <section id="faq" className="section bg-background">
+      <div className="section-center">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
             📚 Frequently Asked Questions

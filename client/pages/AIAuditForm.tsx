@@ -118,7 +118,7 @@ export default function AIAuditForm() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/10 py-12 px-4">
-      <div className="container mx-auto max-w-3xl">
+      <div className="section-center">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-heading font-bold mb-2 text-foreground">
             AI Audit

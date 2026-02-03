@@ -128,9 +128,9 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-4 bg-gradient-to-b from-background/95 to-background">
+    <section id="services" className="section py-20 bg-gradient-to-b from-background/95 to-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
+        <div className="section-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
             ⭐ What We Do
           </h2>
@@ -140,7 +140,7 @@ export default function Services() {
         </div>
 
         {/* FutureOS Platform Introduction */}
-        <div className="mb-16 max-w-4xl mx-auto">
+        <div className="section-wide mb-16">
           <Card className="bg-gradient-to-br from-primary/5 via-background to-primary/5 border-primary/20 p-8 md:p-12">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-6">
               <div className="w-16 h-16 bg-primary/15 rounded-xl flex items-center justify-center border border-primary/25 flex-shrink-0">

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, PlayCircle } from "lucide-react";
 import { useEffect, useState } from "react";
+import { logEvent } from "@/lib/log";
 
 export default function Hero() {
   const [calendlyReady, setCalendlyReady] = useState(false);
@@ -24,18 +25,17 @@ export default function Hero() {
   };
 
   const handleCalendly = () => {
-    console.log('I am here5');
+    logEvent('book_audit_clicked', { from: 'hero' }, 'info');
     window.location.href = 'https://calendly.com/karthik-k-resolvix/30min?redirect_url=http://localhost:8080/';
-    // logEvent('booking calendly demo', { }, 'info', 'demo');
   };
 
   return (
-    <section className="pt-10 pb-10 px-4 bg-gradient-to-br from-background via-background to-primary/10">
+    <section className="section-hero">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center animate-fade-in-up">
 
           {/* FutureOS Launch Callout with CTA */}
-          <div className="mx-auto mb-8 max-w-4xl rounded-2xl border border-primary/25 bg-background/40 backdrop-blur px-4 py-4 sm:px-6 sm:py-5 shadow-[0_0_0_1px_rgba(255,255,255,0.03)]">
+          <div className="card-panel mb-8">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-start gap-3 text-left sm:items-center">
                 <div className="mt-0.5 sm:mt-0 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 border border-primary/25">
@@ -60,7 +60,7 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button
                   className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold h-10 px-4"
-                  onClick={() =>scrollToSection("services")}
+                  onClick={() => { logEvent('see_demo_clicked', { from: 'hero' }, 'info'); scrollToSection("services"); }}
                 >
                   Explore FutureOS
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -89,7 +89,7 @@ export default function Hero() {
             improve customer experience, and give you clarity with real-time insights.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="cta-buttons">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold h-12 px-8 text-base"

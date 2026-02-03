@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { logEvent } from "@/lib/log";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,9 +22,9 @@ export default function Header() {
   }, []);
 
   const handleCalendly = () => {
-    console.log('I am here5');
+    logEvent('book_audit_clicked', { location: window.location.pathname }, 'info');
+    // Redirect to calendly (fire-and-forget logging)
     window.location.href = 'https://calendly.com/karthik-k-resolvix/30min?redirect_url=http://localhost:8080/';
-    // logEvent('booking calendly demo', { }, 'info', 'demo');
   };
 
   // Added: supports safe navigation to sections when not on homepage
@@ -32,6 +33,11 @@ export default function Header() {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
+
+    // Log CTA clicks for analytics
+    if (id === 'cta') {
+      logEvent('cta_clicked', { from: location.pathname }, 'info');
+    }
 
     // If element exists on current page, scroll as before (existing functionality preserved)
     if (element) {

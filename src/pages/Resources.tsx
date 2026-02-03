@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../../client/components/ui/button";
 import { Card, CardContent } from "../../client/components/ui/card";
 import { useEffect, useState } from "react";
+import { logEvent } from "../../client/lib/log";
 
 export default function Resources() {
   const [calendlyReady, setCalendlyReady] = useState(false);
@@ -20,15 +21,14 @@ export default function Resources() {
   }, []);
 
   const handleCalendly = () => {
-    console.log('I am here5');
+    logEvent('book_audit_clicked', { page: 'resources' }, 'info');
     window.location.href = 'https://calendly.com/karthik-k-resolvix/30min?redirect_url=http://localhost:8080/';
-    // logEvent('booking calendly demo', { }, 'info', 'demo');
   };
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 mb-16 pt-12">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="section">
+        <div className="section-center">
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
             AI Automation Case Studies
           </h1>
@@ -38,7 +38,7 @@ export default function Resources() {
             measurable business impact.
           </p>
           <Button asChild className="bg-primary hover:bg-primary/90">
-            <Link to="/#cta">Get a Free AI Audit</Link>
+            <Link to="/#cta" onClick={() => logEvent('cta_clicked', { page: 'resources' }, 'info')}>Get a Free AI Audit</Link>
           </Button>
         </div>
       </section>
@@ -115,8 +115,8 @@ export default function Resources() {
       </section>
 
       {/* CTA Strip */}
-      <section className="container mx-auto px-4 mt-32 pb-20 mb-16">
-        <div className="bg-muted rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <section className="section mt-32 pb-20">
+        <div className="cta-strip">
           <div>
             <h3 className="font-heading text-2xl font-semibold mb-2">
               Unsure where to start with AI automation?

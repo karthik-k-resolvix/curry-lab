@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { logEvent } from "@/lib/log";
 
 export default function CTA() {
   const navigate = useNavigate();
@@ -21,13 +22,12 @@ export default function CTA() {
   }, []);
 
   const handleCalendly = () => {
-    console.log('I am here5');
+    logEvent('book_audit_clicked', { from: 'cta' }, 'info');
     window.location.href = 'https://calendly.com/karthik-k-resolvix/30min?redirect_url=http://localhost:8080/';
-    // logEvent('booking calendly demo', { }, 'info', 'demo');
   };
   return (
-    <section id="cta" className="py-20 px-4 bg-gradient-to-r from-primary/12 via-background to-background">
-      <div className="container mx-auto max-w-4xl text-center">
+    <section id="cta" className="section-cta">
+      <div className="section-wide text-center">
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground">
           📞 Ready to Automate Your Business?
         </h2>

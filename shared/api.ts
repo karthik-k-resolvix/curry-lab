@@ -10,3 +10,13 @@
 export interface DemoResponse {
   message: string;
 }
+ /**
+  * Generic log event sent from client to server for CTA/tracking purposes
+  */
+ export interface LogEvent {
+   name: string;
+   properties?: Record<string, any>;
+   level?: 'info' | 'warn' | 'error' | 'debug';
+   timestamp?: string;
+   source?: string;
+ }

@@ -52,9 +52,9 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-20 px-4 bg-gradient-to-b from-background to-background/95">
+    <section id="pricing" className="section bg-gradient-to-b from-background to-background/95">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
+        <div className="section-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
             💼 Pricing
           </h2>
