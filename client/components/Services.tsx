@@ -188,7 +188,7 @@ export default function Services() {
             return (
               <Card
                 key={index}
-                className="p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg cursor-pointer group"
+                className="p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg cursor-pointer group h-full flex flex-col"
               >
                 <div className="mb-4">
                   <div className="w-12 h-12 bg-primary/15 rounded-lg flex items-center justify-center group-hover:bg-primary/25 transition-colors">
@@ -217,7 +217,7 @@ export default function Services() {
                   ))}
                 </div>
 
-                <div className="pt-4 border-t border-border">
+                <div className="mt-auto pt-4 border-t border-border">
                   <p className="text-xs text-foreground font-semibold">
                     <span className="text-primary">Why it matters:</span>{" "}
                     {service.why}

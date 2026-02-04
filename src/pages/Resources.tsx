@@ -47,68 +47,78 @@ export default function Resources() {
       <section className="container mx-auto px-4 mb-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* E-commerce */}
-          <Card className="bg-card border-border">
-            <CardContent className="p-6 flex flex-col h-full">
+          <Card className="bg-card border-border h-full flex flex-col">
+            <CardContent className="p-6 flex flex-col flex-1">
               <span className="text-sm text-primary font-medium mb-2">
                 E-Commerce
               </span>
               <h2 className="font-heading text-xl font-semibold mb-3">
                 AI Automation for E-Commerce Operations
               </h2>
-              <p className="text-muted-foreground mb-6 flex-grow">
+              <p className="text-muted-foreground mb-6">
                 How AI-driven workflows reduce manual order processing, automate
                 customer support, and deliver real-time sales intelligence for
                 high-volume e-commerce businesses.
               </p>
-              <Button asChild variant="outline">
-                <Link to="/resources/ecommerce-ai-automation">
-                  View Case Study
-                </Link>
-              </Button>
+
+              <div className="mt-auto">
+                <Button asChild variant="outline">
+                  <Link to="/resources/ecommerce-ai-automation">
+                    View Case Study
+                  </Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
           {/* Insurance */}
-          <Card className="bg-card border-border">
-            <CardContent className="p-6 flex flex-col h-full">
+          <Card className="bg-card border-border h-full flex flex-col">
+            <CardContent className="p-6 flex flex-col flex-1">
               <span className="text-sm text-primary font-medium mb-2">
                 Insurance
               </span>
               <h2 className="font-heading text-xl font-semibold mb-3">
                 AI Automation in Insurance Operations
               </h2>
-              <p className="text-muted-foreground mb-6 flex-grow">
+              <p className="text-muted-foreground mb-6">
                 Streamlining claims processing, underwriting support, and policy
                 servicing using AI to reduce turnaround times and operational
                 costs.
               </p>
-              <Button asChild variant="outline">
-                <Link to="/resources/insurance-ai-automation">
-                  View Case Study
-                </Link>
-              </Button>
+
+              <div className="mt-auto">
+                <Button asChild variant="outline">
+                  <Link to="/resources/insurance-ai-automation">
+                    View Case Study
+                  </Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
+
           {/* Fashion */}
-          <Card className="bg-card border-border">
-            <CardContent className="p-6 flex flex-col h-full">
+          <Card className="bg-card border-border h-full flex flex-col">
+            <CardContent className="p-6 flex flex-col flex-1">
               <span className="text-sm text-primary font-medium mb-2">
                 Fashion & Apparel
               </span>
               <h2 className="font-heading text-xl font-semibold mb-3">
                 AI Automation for Fashion & Apparel Brands
               </h2>
-              <p className="text-muted-foreground mb-6 flex-grow">
+              <p className="text-muted-foreground mb-6">
                 Using AI to improve demand forecasting, inventory planning,
                 merchandising automation, and returns management in fashion
                 businesses.
               </p>
-              <Button asChild variant="outline">
-                <Link to="/resources/fashion-ai-automation">
-                  View Case Study
-                </Link>
-              </Button>
+
+              <div className="mt-auto">
+                <Button asChild variant="outline">
+                  <Link to="/resources/fashion-ai-automation">
+                    View Case Study
+                  </Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
