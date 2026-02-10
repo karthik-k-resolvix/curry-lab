@@ -49,7 +49,7 @@ export default function CTA() {
             size="lg"
             variant="outline"
             className="border-primary/30 hover:bg-primary/5 text-primary rounded-lg font-semibold h-12 px-8 text-base"
-           onClick={handleCalendly}
+           onClick={() => navigate('/ai-audit')}
           >
            Try Free Audit Today!
           </Button>
