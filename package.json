@@ -26,10 +26,6 @@
     "format.fix": "prettier --write .",
     "typecheck": "tsc"
   },
-<<<<<<< HEAD
-=======
-
->>>>>>> f7a10a57370b86b6173d6746ec28edce4481f7b5
   "dependencies": {
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
