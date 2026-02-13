@@ -133,21 +133,14 @@ export default function AIAuditForm() {
     <button
       onClick={() => !isLocked && handleSectionClick(section.index)}
       disabled={isLocked}
-      className={`w-full flex items-center justify-between p-4 rounded-lg transition-all ${
-        isLocked
-          ? "bg-gray-100 cursor-not-allowed opacity-60"
-          : "bg-primary/5 hover:bg-primary/10 cursor-pointer"
-      } ${isExpanded ? "bg-primary/10" : ""}`}
+      className="w-full flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-all rounded-lg"
     >
       <h2 className="text-left text-xl font-heading font-semibold text-foreground">
         {section.title}
       </h2>
-      <div className="flex items-center gap-2">
-        {isLocked && <span className="text-xs text-muted-foreground">Locked</span>}
-        <ChevronDown
-          className={`h-5 w-5 transition-transform ${isExpanded ? "rotate-180" : ""}`}
-        />
-      </div>
+      <ChevronDown
+        className={`h-5 w-5 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+      />
     </button>
   );
 
@@ -345,7 +338,7 @@ export default function AIAuditForm() {
                 {expandedSection === 1 && (
                   <div className="space-y-6 pt-4 px-4">
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         Monthly Order Volume <span className="text-destructive">*</span>
                       </Label>
                       <RadioGroup
@@ -389,7 +382,7 @@ export default function AIAuditForm() {
                     </div>
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         Where do you sell? <span className="text-destructive">*</span>
                       </Label>
                       <RadioGroup
@@ -448,7 +441,7 @@ export default function AIAuditForm() {
                     </div>
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         How do customers escalate/reach out to you?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -516,7 +509,7 @@ export default function AIAuditForm() {
                 {expandedSection === 2 && (
                   <div className="space-y-6 pt-4 px-4">
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         Do you have any customer support automation?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -546,7 +539,7 @@ export default function AIAuditForm() {
                     </div>
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         Most common customer queries?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -594,7 +587,7 @@ export default function AIAuditForm() {
                     </div>
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         Are order updates, returns, exchanges automated?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -644,7 +637,7 @@ export default function AIAuditForm() {
                 {expandedSection === 3 && (
                   <div className="space-y-6 pt-4 px-4">
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         Primary marketing channel? <span className="text-destructive">*</span>
                       </Label>
                       <RadioGroup
@@ -691,7 +684,7 @@ export default function AIAuditForm() {
                     </div>
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         Monthly Ad Spend? <span className="text-destructive">*</span>
                       </Label>
                       <RadioGroup
@@ -732,7 +725,7 @@ export default function AIAuditForm() {
                     </div>
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         Inventory management challenges?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -788,7 +781,7 @@ export default function AIAuditForm() {
                 {expandedSection === 4 && (
                   <div className="space-y-6 pt-4 px-4">
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         What's your biggest challenge right now?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -836,7 +829,7 @@ export default function AIAuditForm() {
                     </div>
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         Have you used AI tools before?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -867,7 +860,7 @@ export default function AIAuditForm() {
 
                     {usedAIToolsBefore === "Yes" && (
                       <div>
-                        <Label>If yes, how did you do the automation previously?</Label>
+                        <Label className="text-left">If yes, how did you do the automation previously?</Label>
                         <RadioGroup
                           className="mt-2"
                           onValueChange={(value) =>
@@ -897,7 +890,7 @@ export default function AIAuditForm() {
                     )}
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         How much time does your team spend daily on repetitive tasks?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -939,7 +932,7 @@ export default function AIAuditForm() {
                     </div>
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         What would success look like for you in 6 months?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -1001,7 +994,7 @@ export default function AIAuditForm() {
                 {expandedSection === 5 && (
                   <div className="space-y-6 pt-4 px-4">
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         When do you want to implement AI automation?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
@@ -1037,7 +1030,7 @@ export default function AIAuditForm() {
                     </div>
 
                     <div>
-                      <Label>
+                      <Label className="text-left">
                         How much are you likely invest in your AI automation per month{" "}
                         <span className="text-destructive">*</span>
                       </Label>
